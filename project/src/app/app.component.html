@@ -13,6 +13,14 @@
               required
               id="exampleInputName1"
             />
+            <small
+              class="text-danger"
+              *ngIf="
+                identifyForm.get('name')?.invalid &&
+                identifyForm.get('name')?.touched
+              "
+              >Name is required</small
+            >
             <h5>Name Field</h5>
             <div class="validation-box d-flex">
               <ul>
@@ -59,6 +67,14 @@
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
+            <small
+              class="text-danger"
+              *ngIf="
+                identifyForm.get('email')?.invalid &&
+                identifyForm.get('email')?.touched
+              "
+              >Email is required</small
+            >
             <div id="emailHelp" class="form-text">
               We'll never share your email with anyone else.
             </div>
@@ -71,6 +87,14 @@
               id="examplePhoneName1"
               formControlName="phone"
             />
+            <small
+              class="text-danger"
+              *ngIf="
+                identifyForm.get('phone')?.invalid &&
+                identifyForm.get('phone')?.touched
+              "
+              >Phone is required</small
+            >
           </div>
           <div class="mb-3">
             <label for="examplePhoneMessage1" class="form-label">Message</label>
@@ -80,6 +104,14 @@
               id="examplePhoneMessage1"
               formControlName="message"
             ></textarea>
+            <small
+              class="text-danger"
+              *ngIf="
+                identifyForm.get('message')?.invalid &&
+                identifyForm.get('message')?.touched
+              "
+              >Message is required</small
+            >
           </div>
           <p>Status: {{ identifyForm.status }}</p>
           <button
