@@ -20,9 +20,16 @@ export class AppComponent {
   //* For Form & Inputs (Grouped)
   identifyForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    message: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [
+      Validators.required,
+      Validators.pattern(''),
+      Validators.minLength(10),
+    ]),
+    message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(15),
+    ]),
   });
 
   //* FormBuilder Using

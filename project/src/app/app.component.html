@@ -1,6 +1,6 @@
 <div class="root">
   <div class="container">
-    <div class="row vh-100 justify-content-center align-items-center">
+    <div class="row justify-content-center align-items-center">
       <div class="col-md-8 column">
         <form [formGroup]="identifyForm">
           <h2 class="text-center">Angular Reactive Form Validation</h2>
@@ -10,8 +10,39 @@
               type="text"
               class="form-control"
               formControlName="name"
+              required
               id="exampleInputName1"
             />
+            <h5>Name Field</h5>
+            <div class="validation-box d-flex">
+              <ul>
+                <li>Touched: {{ identifyForm.get("name")?.touched }}</li>
+                <li>Untouched: {{ identifyForm.get("name")?.untouched }}</li>
+              </ul>
+              <ul>
+                <li>Pristine: {{ identifyForm.get("name")?.pristine }}</li>
+                <li>Dirty: {{ identifyForm.get("name")?.dirty }}</li>
+              </ul>
+              <ul>
+                <li>Valid: {{ identifyForm.get("name")?.valid }}</li>
+                <li>Invalid: {{ identifyForm.get("name")?.invalid }}</li>
+              </ul>
+            </div>
+            <h5>Form Field</h5>
+            <div class="validation-box d-flex">
+              <ul>
+                <li>Touched: {{ identifyForm.touched }}</li>
+                <li>Untouched: {{ identifyForm.untouched }}</li>
+              </ul>
+              <ul>
+                <li>Pristine: {{ identifyForm.pristine }}</li>
+                <li>Dirty: {{ identifyForm.dirty }}</li>
+              </ul>
+              <ul>
+                <li>Valid: {{ identifyForm.valid }}</li>
+                <li>Invalid: {{ identifyForm.invalid }}</li>
+              </ul>
+            </div>
             <!-- <button class="btn btn-info my-1" type="button" (click)="setNameValue()">
               Set Name Value
             </button> -->
