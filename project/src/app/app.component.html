@@ -12,6 +12,7 @@
               formControlName="name"
               required
               id="exampleInputName1"
+              autocomplete="off"
             />
             <small
               class="text-danger"
@@ -61,11 +62,12 @@
               >Email address</label
             >
             <input
-              type="email"
+              type="text"
               class="form-control"
               formControlName="email"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              autocomplete="off"
             />
             <small
               class="text-danger"
@@ -86,6 +88,7 @@
               class="form-control"
               id="examplePhoneName1"
               formControlName="phone"
+              autocomplete="off"
             />
             <small
               class="text-danger"
@@ -103,6 +106,7 @@
               class="form-control"
               id="examplePhoneMessage1"
               formControlName="message"
+              autocomplete="off"
             ></textarea>
             <small
               class="text-danger"
@@ -111,6 +115,46 @@
                 identifyForm.get('message')?.touched
               "
               >Message is required</small
+            >
+          </div>
+          <div class="mb-3">
+            <label for="examplePhoneMessage1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="examplePhoneMessage1"
+              formControlName="password"
+              autocomplete="off"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                identifyForm.get('password')?.invalid &&
+                identifyForm.get('password')?.touched
+              "
+              >Password is required</small
+            >
+          </div>
+          <div class="mb-3">
+            <label for="examplePhoneMessage1" class="form-label"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="examplePhoneMessage1"
+              formControlName="confirmPassword"
+              autocomplete="off"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                identifyForm.get('confirmPassword')?.invalid &&
+                identifyForm.get('confirmPassword')?.touched
+              "
+              >Confirm Password is required</small
             >
           </div>
           <p>Status: {{ identifyForm.status }}</p>
