@@ -156,6 +156,14 @@
               "
               >Confirm Password is required</small
             >
+            <small
+              class="text-danger"
+              *ngIf="
+                identifyForm.get('confirmPassword')?.valid &&
+                identifyForm.hasError('notSame')
+              "
+              >Passwords must be equal</small
+            >
           </div>
           <p>Status: {{ identifyForm.status }}</p>
           <button
